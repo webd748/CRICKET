@@ -1,0 +1,108 @@
+:root {
+  --bg: #0b1020;
+  --panel: #131c35;
+  --panel-2: #1a2546;
+  --text: #e8ecf8;
+  --muted: #8fa3d1;
+  --accent: #2dd4bf;
+  --danger: #f97373;
+  --warning: #f59e0b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #18284f, var(--bg));
+  color: var(--text);
+}
+.app-shell { max-width: 1300px; margin: 0 auto; padding: 20px; }
+.topbar { display: flex; justify-content: space-between; align-items: start; gap: 20px; }
+.topbar h1 { margin: 0 0 8px 0; font-size: clamp(1.3rem, 3vw, 2rem); }
+.subhead { margin: 0; color: var(--muted); }
+.global-badge { background: #0f172b; border: 1px solid #2f3f6c; padding: 10px 14px; border-radius: 12px; color: #cdd8f5; }
+
+.card {
+  background: linear-gradient(180deg, #162243, #111a34);
+  border: 1px solid #273862;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .25);
+}
+.setup-card { margin-top: 16px; }
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+label { display: grid; gap: 8px; font-size: 0.92rem; color: #d5e1ff; }
+input, select, button {
+  border-radius: 10px;
+  border: 1px solid #314674;
+  background: #0d1630;
+  color: var(--text);
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+button { cursor: pointer; font-weight: 600; }
+button:hover { filter: brightness(1.1); }
+button.accent { background: #0f766e; border-color: #14b8a6; }
+button.secondary { background: #1d325e; }
+button.ghost { background: transparent; }
+.actions-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.team-pill-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.team-pill { padding: 8px 12px; border-radius: 999px; font-weight: 600; color: #061128; }
+
+.tabs { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+.tab { background: #16264a; }
+.tab.active { outline: 2px solid #42d6c6; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.arena-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; }
+.player-card { min-height: 320px; }
+.player-hero { display: flex; gap: 16px; }
+.player-hero img { width: 160px; height: 180px; object-fit: cover; border-radius: 12px; border: 2px solid #39538d; }
+.player-details h2 { margin: 0 0 8px; font-size: 1.8rem; }
+.badge { display: inline-block; padding: 4px 9px; border-radius: 999px; background: #213667; margin-right: 6px; font-size: .82rem; }
+.stat { color: #bdd0fd; margin-top: 8px; }
+.validation-panel { min-height: 56px; font-size: .88rem; margin: 10px 0; }
+.validation-panel.ok { color: #50e5cf; }
+.validation-panel.error { color: var(--danger); }
+.actions-stack { display: grid; gap: 8px; }
+
+.player-list-card { margin-top: 14px; }
+.pool-stats { color: var(--muted); margin-bottom: 10px; }
+.player-pool-list { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 10px; }
+.player-item { background: var(--panel-2); border: 1px solid #2f406f; border-radius: 12px; padding: 10px; }
+.player-item h4 { margin: 0 0 4px; font-size: 1rem; }
+.status-unsold { color: #cfe1ff; }
+.status-passed { color: var(--warning); }
+.status-sold { color: #60f0c7; }
+
+.teams-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 14px; }
+.team-card header { display: flex; justify-content: space-between; align-items: center; }
+.team-color-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: #d8e4ff; }
+
+.unsold-list { display: grid; gap: 8px; }
+.unsold-row { display: flex; align-items: center; justify-content: space-between; background: #122140; border: 1px solid #2a3e6d; border-radius: 10px; padding: 10px; }
+
+.toast {
+  position: fixed; bottom: 18px; right: 18px; background: #13315d; border: 1px solid #3f61a0;
+  border-radius: 10px; padding: 10px 12px; opacity: 0; transform: translateY(10px); transition: all .25s ease;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+.confetti {
+  position: fixed; top: -12px; width: 10px; height: 14px; opacity: 0.95; pointer-events: none;
+  animation: drop 1.8s linear forwards;
+}
+@keyframes drop { to { transform: translateY(105vh) rotate(480deg); opacity: 0.2; } }
+.muted { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .arena-grid { grid-template-columns: 1fr; }
+  .player-hero { flex-direction: column; }
+  .player-hero img { width: 100%; max-width: 280px; height: 260px; }
+}
