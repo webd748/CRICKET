@@ -1,0 +1,14 @@
+[
+  {"name":"Virat Kohli","role":"Batsman","basePrice":1200,"imageUrl":"https://images.unsplash.com/photo-1543357480-c60d400e2ef9?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Rohit Sharma","role":"Batsman","basePrice":1100,"imageUrl":"https://images.unsplash.com/photo-1606902965551-dce093cda6e7?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Jasprit Bumrah","role":"Bowler","basePrice":1000,"imageUrl":"https://images.unsplash.com/photo-1595433707802-826190f7f307?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Ravindra Jadeja","role":"All-Rounder","basePrice":950,"imageUrl":"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Rishabh Pant","role":"WK","basePrice":900,"imageUrl":"https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Shubman Gill","role":"Batsman","basePrice":850,"imageUrl":"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Hardik Pandya","role":"All-Rounder","basePrice":1000,"imageUrl":"https://images.unsplash.com/photo-1626095835900-c8388cd6d4f3?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Yuzvendra Chahal","role":"Bowler","basePrice":700,"imageUrl":"https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=400&q=80"},
+  {"name":"KL Rahul","role":"WK","basePrice":930,"imageUrl":"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Mohammed Siraj","role":"Bowler","basePrice":650,"imageUrl":"https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Suryakumar Yadav","role":"Batsman","basePrice":880,"imageUrl":"https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=400&q=80"},
+  {"name":"Axar Patel","role":"All-Rounder","basePrice":720,"imageUrl":"https://images.unsplash.com/photo-1626248801379-51a0748a5f96?auto=format&fit=crop&w=400&q=80"}
+]

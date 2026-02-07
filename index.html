@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tournament Auctioneer Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>🏏 Tournament Auctioneer Dashboard</h1>
+          <p class="subhead">Multi-team live auction control room</p>
+        </div>
+        <div class="global-badge" id="globalBadge"></div>
+      </header>
+
+      <section class="setup-card card">
+        <h2>Team Setup & Global Configuration</h2>
+        <div class="setup-grid">
+          <label>
+            Wallet Amount (₹)
+            <input id="walletInput" type="number" min="1000" step="500" value="10000" />
+          </label>
+          <label>
+            Squad Size
+            <input id="squadSizeInput" type="number" min="1" max="25" value="11" />
+          </label>
+          <label>
+            Minimum Base Price (₹)
+            <input id="minBaseInput" type="number" min="100" step="100" value="500" />
+          </label>
+          <label>
+            Team Name
+            <input id="teamNameInput" type="text" placeholder="e.g., Mumbai Indians" />
+          </label>
+        </div>
+        <div class="actions-row">
+          <button id="addTeamBtn">+ Add Team</button>
+          <button id="applyGlobalsBtn" class="secondary">Apply Global Settings</button>
+          <button id="loadDemoBtn" class="ghost">Load Demo Teams</button>
+        </div>
+        <div id="teamsPillList" class="team-pill-list"></div>
+      </section>
+
+      <nav class="tabs">
+        <button data-tab="arena" class="tab active">Auction Arena</button>
+        <button data-tab="teams" class="tab">Teams View</button>
+        <button data-tab="unsold" class="tab">Unsold Players</button>
+      </nav>
+
+      <main>
+        <section id="arena" class="tab-panel active">
+          <div class="arena-grid">
+            <article class="card player-card" id="activePlayerCard"></article>
+            <article class="card bid-card">
+              <h2>Bidding Controls</h2>
+              <label>
+                Winning Team
+                <select id="winningTeamSelect"></select>
+              </label>
+              <label>
+                Sold Price (₹)
+                <input id="soldPriceInput" type="number" min="0" step="100" placeholder="Enter sold price" />
+              </label>
+              <div id="validationPanel" class="validation-panel"></div>
+              <div class="actions-stack">
+                <button id="markSoldBtn" class="accent">Mark as Sold</button>
+                <button id="markUnsoldBtn" class="secondary">Mark as Unsold (Passed)</button>
+                <button id="nextPlayerBtn" class="ghost">Next Player</button>
+              </div>
+            </article>
+          </div>
+          <section class="card player-list-card">
+            <h2>Player Pool</h2>
+            <div id="playerPoolStats" class="pool-stats"></div>
+            <div id="playerPoolList" class="player-pool-list"></div>
+          </section>
+        </section>
+
+        <section id="teams" class="tab-panel">
+          <div id="teamsLeaderboard" class="teams-grid"></div>
+        </section>
+
+        <section id="unsold" class="tab-panel">
+          <article class="card">
+            <h2>Unsold / Passed Players</h2>
+            <p class="muted">Re-auction players directly from this list when needed.</p>
+            <div id="unsoldList" class="unsold-list"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
